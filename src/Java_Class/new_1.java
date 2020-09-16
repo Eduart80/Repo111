@@ -8,12 +8,12 @@ package Java_Class;
                 System.out.println("Numbers of Hours per day " + nHours +", and "+ nDays + " days per year.");
 
                 //# of employee
-                long nEmployee = 452;
+                int nEmployee = 452;
                 System.out.println("Vet company has " + nEmployee + " employees.");
 
                 //population
                 long nPopulation = 7_000_000L;
-                System.out.println("Population in this country is "+ nPopulation);
+                System.out.println("Population in this country is "+ nPopulation +" peoples.");
 
                 //interest rate
                 float pRate = 30.5f;
