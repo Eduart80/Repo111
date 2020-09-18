@@ -34,6 +34,22 @@ package Java_Class;
                 char lastIN ='Z';
                 System.out.println("This homework is from " + nameIn + lastIN);
 
+                int abc=2;
+                abc++;
+                System.out.println(abc++); //post increment
+                System.out.println(++abc); //pree increment
+                System.out.println(++abc); //6
+                System.out.println(++abc); //7
+
+                int abc2=2;
+                abc2--;
+                System.out.println(abc2++); //post increment
+                System.out.println(++abc2); //pree increment
+                System.out.println(abc2++); //6
+                System.out.println(++abc2); //7
+
+
+
 
         }
 
