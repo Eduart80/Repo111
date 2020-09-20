@@ -46,7 +46,7 @@ public class homeWork2 {
          */
         double tmpCelsius = 10;
         double tmpKelvin = tmpCelsius + 273.15;
-        System.out.println("10 deg Celsius is equal to "+ tmpKelvin + " degree Kelvin" );
+        System.out.println("10 deg Celsius is equal to "+ tmpKelvin + " Kelvin" );
 
 
     }
