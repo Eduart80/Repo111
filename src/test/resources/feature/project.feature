@@ -1,5 +1,0 @@
-@regression
-Feature:
-
-  @smoke
-  Scenario:
