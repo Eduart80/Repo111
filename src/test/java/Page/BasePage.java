@@ -25,6 +25,11 @@ public class BasePage {
     public void enterField(By locator, String name){
         Web.getDriver().findElement(locator).sendKeys(name);
     }
+    public void submitIt(By locator, String name){
+       WebElement toSend = Web.getDriver().findElement(locator);
+       toSend.sendKeys(name);
+       toSend.submit();
+    }
     public void waitASec(){
         Web.getDriver().manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
     }
@@ -94,9 +99,9 @@ public class BasePage {
         WebElement codeIsHere = Web.getDriver().findElement(locator);
         boolean code = codeIsHere.isDisplayed();
         if(code){
-            System.out.println("Teacher code is: " + codeIsHere.getText());
+            System.out.println("Teacher verification is: " + codeIsHere.getText());
         }else {
-            System.out.println("Teacher code is: " + false);
+            System.out.println("Teacher verification is: " + false);
         }
     }
     public void assertEqual(By locator, String toMatch){
@@ -109,6 +114,7 @@ public class BasePage {
             if (divIn.getText().equalsIgnoreCase(nameSearch)){
                 System.out.println(": -> "+divIn.getText());
                 divIn.click();
+
             }
         }
 
