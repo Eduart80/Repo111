@@ -9,6 +9,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
+import org.testng.Assert;
 
 import java.time.Duration;
 import java.util.List;
@@ -69,7 +70,7 @@ public class BasePage {
         List<WebElement> myList = Web.getDriver().findElements(locator);
         for(WebElement divIn : myList){
             if (divIn.getText().equalsIgnoreCase(nameToSearch)){
-                System.out.println("from list form "+divIn.getText());
+                //System.out.println("from list form "+divIn.getText());
                 divIn.click();
                 break;
             }
@@ -88,6 +89,29 @@ public class BasePage {
             }
         });
     return element;
+    }
+    public void isDisplayed(By locator) {
+        WebElement codeIsHere = Web.getDriver().findElement(locator);
+        boolean code = codeIsHere.isDisplayed();
+        if(code){
+            System.out.println("Teacher code is: " + codeIsHere.getText());
+        }else {
+            System.out.println("Teacher code is: " + false);
+        }
+    }
+    public void assertEqual(By locator, String toMatch){
+        WebElement codeIsHere = Web.getDriver().findElement(locator);
+        Assert.assertEquals(codeIsHere.getText(), toMatch, "The element name is not matching.");
+    }
+    public void selectFromMultiLines(By locator, String nameSearch){
+        List<WebElement> myList = Web.getDriver().findElements(locator);
+        for(WebElement divIn : myList){
+            if (divIn.getText().equalsIgnoreCase(nameSearch)){
+                System.out.println(": -> "+divIn.getText());
+                divIn.click();
+            }
+        }
+
     }
 
 

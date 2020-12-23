@@ -1,5 +1,5 @@
 @regression
-Feature: scholastic tests
+Feature: Scholastic Create New Account
 
   Scenario: User can create a new teacher account in taxable state using Zip Code
     When i 'create new account' account
@@ -8,7 +8,7 @@ Feature: scholastic tests
     When on the next form i select Mr.
     And enter name 'Khan' in field
     And entered last name 'Fight' in field
-    Then entered email 'khanfighq@yahoo.com' in field
+    Then entered email 'khanfighta@yahoo.com' in field
     And password '12345ASd' next
     When clicked terms
     And next button
@@ -19,3 +19,11 @@ Feature: scholastic tests
     Then i select role as Teacher (by Grade)
     And select '1st Grade' from list and enter 10 students
     And Reading Level: 'Guided Reading Level (GRL)'
+    When remove adds
+    When click myAccount and select 'Profile'
+    Then i check the teacher code
+    Then i check the Name 'Mr. Khan Fight' is correct
+    Then i verify the address is 'SCHOLASTIC+BOOK+CLUBS 568 Broadway # 2 New York, NY 10012'
+
+
+

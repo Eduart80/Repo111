@@ -82,9 +82,40 @@ public class stepDefinition {
     public void readingLevel(String lookF){
         lp.selectReadingLevel(lookF);
     }
+///////////////////////////////////////////////////////////////////////////////
+    @When("^remove adds$")
+    public void verification(){
+        lp.waitASec();
+        lp.verificationSteps();
+    }
+    @When("^click myAccount and select '(.+)'$")
+    public void myAcc(String name){
+        lp.selectMyAccProfile(name);
+    }
+    @When("^i check the teacher code$")
+    public void teacherCode(){
+        lp.checkCode();
+    }
+    @When("^i check the Name '(.+)' is correct$")
+    public void teacherName(String name){
+        lp.checkName(name);
+    }
+    @When("^i verify the address is '(.+)'$")
+    public void teacherAddress(String address){
+        lp.checkAddress2(address);
+    }
 
 
-
-
-
+/**
+ * Verification:
+ *
+ * There is a CLASS CODE allocated to the teacher,
+ * present on Home-Page and MyAccount-Page.
+ *
+ * Same Teacher name is present on My Accounts.
+ *
+ * Same school address is present as selected while creating the account.
+ * Kindly refer snippets.
+ * SCHOLASTIC+BOOK+CLUBS 568 Broadway # 2 New York, NY 10012
+ */
 }

@@ -15,6 +15,7 @@ public class LandingPage extends BasePage {
     By secondRegForm = By.xpath("//div[@class='registration-steps step-1']");
     By teacherSelectRadioB=By.xpath("//label[@for='acccountTeacther']");
     By nextButton = By.xpath("//a[@class='button-next']");
+
     By clickTitle = By.xpath("//div[@class='custom-select']//div[contains(text(),'Select Title')]");
     By dropTitle = By.xpath("//div[@class='selection-list visible']//ul");
     By enterName = By.id("dwfrm_profile_customer_firstname");
@@ -31,6 +32,7 @@ public class LandingPage extends BasePage {
     By selectOnList=By.xpath("//ul[@id='ui-id-2']//li");
     By confirmAddress = By.xpath("//div[@class='school-add']");
     By clickNext = By.xpath("//button[@name='dwfrm_searchschool_findnext']");
+
     By selectRole =By.xpath("//div[@class='selected-option input-select primaryrole required']");
     By selectRole2 =By.xpath("//div[@class='custom-scrollbar']//li[2]");
     By thirdForm =By.xpath("//div[@class='registration-steps step-3']");
@@ -41,6 +43,20 @@ public class LandingPage extends BasePage {
 
     By readingLevel1 = By.xpath("//div[@class='selected-option input-select required']");
     By readingLevList = By.xpath("//div[@class='custom-scrollbar']//li//span");
+    By clicNext4 = By.xpath("//button[@name='dwfrm_profileselection_confirmed']");
+
+    By isOverForm = By.xpath("//div[@id='notificationBar']");
+    By closeOverlayForm = By.xpath("//div[@class='notification-right-col']//span");
+    By verificationCode = By.xpath("//div[@class='details']//*[contains(text(),'ZXWKV')]");
+    By signInAcc = By.xpath("//a[@class='signin pureguest dialog-close disable-autoplay']");
+    By goToMyAcc = By.xpath("//li[@class='user-info toggle-menu']");
+    By selectDropDown =By.xpath("//div[@class='toggle-content']//li//a");
+    /////
+    By teacherCode = By.xpath("//div[@class='classcode']//span");
+    By teachName =By.xpath("//div[@class='name-section']//div[2]//div//span");
+    By teachSchool = By.xpath("//div[@class='school-section']//div[2]//div//span");
+
+
 
 
 
@@ -117,8 +133,30 @@ public class LandingPage extends BasePage {
     public void selectReadingLevel(String lookFor){
         clickThis(readingLevel1);
         selectFromList(readingLevList, lookFor);
-
+        clickThis(clicNext4);
     }
+    public void verificationSteps() {
+        waitAMin();
+        WebElement seeFirst = Web.getDriver().findElement(isOverForm);
+        boolean isAcct = seeFirst.isDisplayed();
+        if (isAcct) {
+            clickThis(closeOverlayForm);
+        }
+    }
+    public void selectMyAccProfile(String name){
+        clickThis(goToMyAcc);
+        selectFromList(selectDropDown, name);
+    }
+    public void checkCode(){
+        isDisplayed(teacherCode);
+    }
+    public void checkName(String name){
+        assertEqual(teachName, name);
+    }
+    public void checkAddress2(String name){
+        selectFromMultiLines(teachSchool, name);
+    }
+
 
 
 
