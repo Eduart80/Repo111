@@ -1,16 +1,13 @@
 package Page;
 
 import WebDriver.Web;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.testng.Assert;
-
+import org.openqa.selenium.JavascriptExecutor;
 import java.time.Duration;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -71,11 +68,20 @@ public class BasePage {
         Actions act = new Actions(Web.getDriver());
         act.moveToElement(moveClick).click().perform();
     }
+    public void scrollPage(){
+        JavascriptExecutor js = (JavascriptExecutor)Web.getDriver();
+        js.executeScript("scrollBy(0.700);");
+    }
+    public void scrollByWebElement(By locator){
+        JavascriptExecutor js = (JavascriptExecutor)Web.getDriver();
+        WebElement elem = Web.getDriver().findElement(locator);
+        js.executeScript("arguments[0].scrollIntoView(true);", elem);
+    }
     public void selectFromList(By locator, String nameToSearch){
         List<WebElement> myList = Web.getDriver().findElements(locator);
         for(WebElement divIn : myList){
             if (divIn.getText().equalsIgnoreCase(nameToSearch)){
-                //System.out.println("from list form "+divIn.getText());
+                System.out.println("Select form list: "+divIn.getText());
                 divIn.click();
                 break;
             }
@@ -104,17 +110,38 @@ public class BasePage {
             System.out.println("Teacher verification is: " + false);
         }
     }
+    public void isVisible(By locator){
+        WebElement codeIsHere = Web.getDriver().findElement(locator);
+        boolean code = codeIsHere.isDisplayed();
+        if(code){
+            System.out.println("Object verification is: " + codeIsHere.getText());
+        }else {
+            System.out.println("Object verification is: " + false);
+        }
+    }
     public void assertEqual(By locator, String toMatch){
         WebElement codeIsHere = Web.getDriver().findElement(locator);
         Assert.assertEquals(codeIsHere.getText(), toMatch, "The element name is not matching.");
     }
     public void selectFromMultiLines(By locator, String nameSearch){
         List<WebElement> myList = Web.getDriver().findElements(locator);
+        System.out.println("A1: "+myList.size());
         for(WebElement divIn : myList){
             if (divIn.getText().equalsIgnoreCase(nameSearch)){
-                System.out.println(": -> "+divIn.getText());
+                System.out.println("A2: -> "+divIn.getText());
                 divIn.click();
-
+                break;
+            }
+        }
+    }
+    public void listContainMultiLines(By locator, String nameSearch){
+        List<WebElement> myList = Web.getDriver().findElements(locator);
+        System.out.println("A1: "+myList.size());
+        for(WebElement divIn : myList){
+            if (divIn.getText().contains(nameSearch)){
+                System.out.println("A2: -> "+divIn.getText());
+                divIn.click();
+                break;
             }
         }
 

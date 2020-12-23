@@ -1,4 +1,4 @@
-@regression
+
 Feature: Scholastic Create New Account
 
   Scenario: User can create a new teacher account in taxable state using Zip Code
@@ -20,6 +20,7 @@ Feature: Scholastic Create New Account
     And select '1st Grade' from list and enter 10 students
     And Reading Level: 'Guided Reading Level (GRL)'
     When remove adds
+    And i see if teacher code is here
     When click myAccount and select 'Profile'
     Then i check the teacher code
     Then i check the Name 'Mr. Khan Fight' is correct

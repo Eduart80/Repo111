@@ -1,6 +1,6 @@
 
   Feature: login
-  @smoke
+
     Scenario:
     When i signing to account
     Then i entered email 'khanfighu@yahoo.com' in field

@@ -88,6 +88,10 @@ public class stepDefinition {
         lp.waitASec();
         lp.verificationSteps();
     }
+    @When("^i see if teacher code is here$")
+    public void teachCodeMain(){
+        lp.codeInMain();
+    }
     @When("^click myAccount and select '(.+)'$")
     public void myAcc(String name){
         lp.selectMyAccProfile(name);
@@ -105,17 +109,4 @@ public class stepDefinition {
         lp.checkAddress2(address);
     }
 
-
-/**
- * Verification:
- *
- * There is a CLASS CODE allocated to the teacher,
- * present on Home-Page and MyAccount-Page.
- *
- * Same Teacher name is present on My Accounts.
- *
- * Same school address is present as selected while creating the account.
- * Kindly refer snippets.
- * SCHOLASTIC+BOOK+CLUBS 568 Broadway # 2 New York, NY 10012
- */
 }

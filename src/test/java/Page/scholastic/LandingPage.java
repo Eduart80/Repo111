@@ -27,7 +27,7 @@ public class LandingPage extends BasePage {
 
     By enterZip =By.id("dwfrm_myschool_schoolzip");
     By buttonSearch = By.id("button-search");
-    By inputSearsh = By.xpath("//input[@id='dwfrm_searchschool_schoolvalue']");
+    By inputSearshA = By.xpath("//input[@id='dwfrm_searchschool_schoolvalue']");
     By listClub = By.id("ui-id-4390");
     By selectOnList=By.xpath("//ul[@id='ui-id-2']//li");
     By confirmAddress = By.xpath("//div[@class='school-add']");
@@ -52,6 +52,7 @@ public class LandingPage extends BasePage {
     By goToMyAcc = By.xpath("//li[@class='user-info toggle-menu']");
     By selectDropDown =By.xpath("//div[@class='toggle-content']//li//a");
     /////
+    By teachCodeInMain=By.xpath("By ClassCodeInMain=By.xpath(\"(//div[@class='sec-box']//div[@class='value'])[1]\");");
     By teacherCode = By.xpath("//div[@class='classcode']//span");
     By teachName =By.xpath("//div[@class='name-section']//div[2]//div//span");
     By teachSchool = By.xpath("//div[@class='school-section']//div[2]//div//span");
@@ -102,10 +103,10 @@ public class LandingPage extends BasePage {
     public void enterZip(String zipNbr){
         enterField(enterZip, zipNbr);
         clickThis(buttonSearch);
-        findElementFluentWait(inputSearsh);
+        findElementFluentWait(inputSearshA);
     }
     public void selectFromClubList(String name){
-        enterField(inputSearsh,name);
+        enterField(inputSearshA,name);
         waitASec();
        selectFromList(listClub,name);
     }
@@ -146,6 +147,9 @@ public class LandingPage extends BasePage {
     public void selectMyAccProfile(String name){
         clickThis(goToMyAcc);
         selectFromList(selectDropDown, name);
+    }
+    public void codeInMain(){
+        isVisible(teachCodeInMain);
     }
     public void checkCode(){
         isDisplayed(teacherCode);
