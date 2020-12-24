@@ -68,6 +68,11 @@ public class BasePage {
         Actions act = new Actions(Web.getDriver());
         act.moveToElement(moveClick).click().perform();
     }
+    public void mouseOver(By locator){
+        WebElement moveClick = Web.getDriver().findElement(locator);
+        Actions act1 = new Actions(Web.getDriver());
+        act1.moveToElement(moveClick).build().perform();
+    }
     public void scrollPage(){
         JavascriptExecutor js = (JavascriptExecutor)Web.getDriver();
         js.executeScript("scrollBy(0.700);");

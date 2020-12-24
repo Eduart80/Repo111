@@ -5,7 +5,7 @@ import WebDriver.Web;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class inAccountLandingPage extends BasePage {
+public class AccLandingPageTC3 extends BasePage {
 
     By signInAcc = By.xpath("//a[@class='signin pureguest dialog-close disable-autoplay']");
     By clickFrame = By.xpath("//div[@class='main modal-login--unauthparent']");
@@ -81,10 +81,5 @@ public class inAccountLandingPage extends BasePage {
         waitASec();
         isDisplayed(verifyBookInList);
     }
-
-
-
-
-
 
 }

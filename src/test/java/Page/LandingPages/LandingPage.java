@@ -1,11 +1,9 @@
-package Page.scholastic;
+package Page.LandingPages;
 
 import Page.BasePage;
 import WebDriver.Web;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-
-import java.security.PublicKey;
 
 public class LandingPage extends BasePage {
 
@@ -60,10 +58,6 @@ public class LandingPage extends BasePage {
 
 
 
-
-
-
-
     //Methods
     public void creatNA(){
         clickThis(createNewAccount);
@@ -108,10 +102,10 @@ public class LandingPage extends BasePage {
     public void selectFromClubList(String name){
         enterField(inputSearshA,name);
         waitASec();
-       selectFromList(listClub,name);
+        selectFromList(listClub,name);
     }
     public void lista(String name){
-       selectFromList(selectOnList,name);
+        selectFromList(selectOnList,name);
     }
     public void checkAddress(String addressInMain){
         waitASec();
@@ -160,8 +154,5 @@ public class LandingPage extends BasePage {
     public void checkAddress2(String name){
         selectFromMultiLines(teachSchool, name);
     }
-
-
-
 
 }

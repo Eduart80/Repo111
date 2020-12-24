@@ -1,13 +1,11 @@
 package stepDefinition;
 
-import Page.scholastic.LandingPage;
+import Page.scholastic.LandingPageTC1;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.When;
 
-import java.util.stream.Stream;
-
-public class stepDefinition {
-    LandingPage lp = new LandingPage();
+public class stepDefinitionTC1 {
+    LandingPageTC1 lp = new LandingPageTC1();
 
     @When("^i 'create new account' account$")
     public void createAccount(){

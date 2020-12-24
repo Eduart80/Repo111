@@ -1,11 +1,11 @@
 package stepDefinition;
 
-import Page.scholastic.inAccountLandingPage;
+import Page.scholastic.AccLandingPageTC3;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.When;
 
-public class SDinsideAccount {
-    inAccountLandingPage lp = new inAccountLandingPage();
+public class SDinsideAccountTC3 {
+    AccLandingPageTC3 lp = new AccLandingPageTC3();
 
 
     @And("^i signing to account$")
