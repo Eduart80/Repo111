@@ -7,6 +7,11 @@ import cucumber.api.java.en.When;
 public class SDcreateAccTC2 {
     createAccTC2 lp = new createAccTC2();
 
+
+    @When("^selsect$")
+    public void enterCity(){
+        lp.sel();
+    }
     @When("^next form i search for '(.+)' and next$")
     public void enterCity(String name){
         lp.selectCityList(name);

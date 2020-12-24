@@ -21,9 +21,9 @@ public class stepDefinitionTC1 {
         lp.mouse();
         lp.waitASec();
     }
-    @When("^on the next form i select Mr.$")
-    public void selectTitle(){
-       lp.dropDownTitle();
+    @When("^on the next form i select '(.+)'$")
+    public void selectTitle(String name){
+       lp.dropDownTitle(name);
        lp.waitAMin();
     }
     @And("^enter name '(.+)' in field$")

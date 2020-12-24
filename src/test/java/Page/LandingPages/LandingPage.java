@@ -143,7 +143,7 @@ public class LandingPage extends BasePage {
         selectFromList(selectDropDown, name);
     }
     public void codeInMain(){
-        isVisible(teachCodeInMain);
+        isEnable(teachCodeInMain);
     }
     public void checkCode(){
         isDisplayed(teacherCode);

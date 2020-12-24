@@ -6,7 +6,15 @@ import cucumber.api.java.en.When;
 
 public class SDerrorMsgTC6 {
     ErrorsMsgTC6 lp = new ErrorsMsgTC6();
-
+    @When("^check toolTips$")
+    public void toolTips(){
+        lp.waitAMin();
+        lp.ifTipsDisplay();
+    }
+    @And("^i see for teacher code is present$")
+    public void teacherCode(){
+        lp.teacherCodeDisplay();
+    }
     @When("^Go to 'Enter Orders'$")
     public void seeOrders(){
         lp.waitASec();

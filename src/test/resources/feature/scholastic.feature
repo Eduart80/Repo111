@@ -1,14 +1,14 @@
-
+@smoke
 Feature: Scholastic Create New Account
 
   Scenario: TC1-User can create a new teacher account in taxable state using Zip Code
     When i 'create new account' account
     And i select radio button as a teacher
     And click Next
-    When on the next form i select Mr.
+    When on the next form i select 'Mr.'
     And enter name 'Khan' in field
     And entered last name 'Fight' in field
-    Then entered email 'khanfighta@yahoo.com' in field
+    Then entered email 'khanfighti@yahoo.com' in field
     And password '12345ASd' next
     When clicked terms
     And next button

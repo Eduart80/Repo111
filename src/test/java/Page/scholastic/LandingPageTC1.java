@@ -13,6 +13,7 @@ public class LandingPageTC1 extends BasePage {
     By createNewAccount = By.xpath("//div[@class='hide-desktop mobile_nav_menu']/following::ul//li[2]//a");
     By registrationForm = By.xpath("//div[@class='registration-steps step-1 choose-accounts']");
     By secondRegForm = By.xpath("//div[@class='registration-steps step-1']");
+    By secTESTForm =By.xpath("//div[@class='selection-list visible']//ul//li//span");
     By teacherSelectRadioB=By.xpath("//label[@for='acccountTeacther']");
     By nextButton = By.xpath("//a[@class='button-next']");
 
@@ -28,6 +29,7 @@ public class LandingPageTC1 extends BasePage {
     By enterZip =By.id("dwfrm_myschool_schoolzip");
     By buttonSearch = By.id("button-search");
     By inputSearshA = By.xpath("//input[@id='dwfrm_searchschool_schoolvalue']");
+    By inputSearchClick =By.xpath("//input[@id='dwfrm_searchschool_schoolvalue']");
     By listClub = By.id("ui-id-4390");
     By selectOnList=By.xpath("//ul[@id='ui-id-2']//li");
     By confirmAddress = By.xpath("//div[@class='school-add']");
@@ -77,10 +79,11 @@ public class LandingPageTC1 extends BasePage {
     public void mouse(){
         mouseAction(nextButton);
     }
-    public void dropDownTitle(){
+    public void dropDownTitle(String name){
         switchForm(secondRegForm);
         clickThis(clickTitle);
-        clickThis(dropTitle);
+        //clickThis(dropTitle);
+        selectFromList(secTESTForm, name);
     }
     public void nameField(String name){
         enterField(enterName, name);
@@ -107,6 +110,7 @@ public class LandingPageTC1 extends BasePage {
     }
     public void selectFromClubList(String name){
         enterField(inputSearshA,name);
+        mouseAction(inputSearchClick);
         waitASec();
        selectFromList(listClub,name);
     }
@@ -115,8 +119,6 @@ public class LandingPageTC1 extends BasePage {
     }
     public void checkAddress(String addressInMain){
         waitASec();
-//        WebElement address = Web.getDriver().findElement(confirmAddress);
-//        System.out.println("from address "+address.getText());
         Web.getDriver().findElement(clickNext).click();
     }
     public void selectRole(){
@@ -149,7 +151,7 @@ public class LandingPageTC1 extends BasePage {
         selectFromList(selectDropDown, name);
     }
     public void codeInMain(){
-        isVisible(teachCodeInMain);
+        isDisplayed(teachCodeInMain);
     }
     public void checkCode(){
         isDisplayed(teacherCode);

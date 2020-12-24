@@ -12,7 +12,8 @@
       And password '12345ASd' next
       When clicked terms
       And next button
-      When next form i search for ' New York' and next
+      And selsect
+      When next form i search for 'New York' and next
       And i enter for 'New York' in city
       Then entered 'Scholastic+Book+Club' on search
       And select from 'Scholastic+Book+Clubs' list

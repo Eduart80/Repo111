@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.Wait;
 import org.testng.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
@@ -91,7 +92,7 @@ public class BasePage {
                 break;
             }
         }
-    }
+    }//Equals
     public WebElement findElementFluentWait(final By locator) {
         Wait fwait = new FluentWait(Web.getDriver())
                 .withTimeout(Duration.ofSeconds(30))
@@ -115,9 +116,9 @@ public class BasePage {
             System.out.println("Teacher verification is: " + false);
         }
     }
-    public void isVisible(By locator){
+    public void isEnable(By locator){
         WebElement codeIsHere = Web.getDriver().findElement(locator);
-        boolean code = codeIsHere.isDisplayed();
+        boolean code = codeIsHere.isEnabled();
         if(code){
             System.out.println("Object verification is: " + codeIsHere.getText());
         }else {
@@ -135,7 +136,6 @@ public class BasePage {
             if (divIn.getText().equalsIgnoreCase(nameSearch)){
                 System.out.println("A2: -> "+divIn.getText());
                 divIn.click();
-                break;
             }
         }
     }
@@ -150,6 +150,14 @@ public class BasePage {
             }
         }
 
+    }//Contains
+    public void removeToolTips(By locator){
+        List<WebElement>aList=Web.getDriver().findElements(locator);
+        for(WebElement span : aList){
+            if(span.isDisplayed()){
+                span.click();
+            }
+        }
     }
 
 

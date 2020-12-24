@@ -3,6 +3,8 @@ package Page.scholastic;
 import Page.BasePage;
 import org.openqa.selenium.By;
 
+import java.security.PublicKey;
+
 public class ErrorsMsgTC6 extends BasePage {
     //locator
 
@@ -13,10 +15,18 @@ public class ErrorsMsgTC6 extends BasePage {
     By buttonADD = By.xpath("//button[@id='btn-add']");
     By errorMsg = By.xpath("//span[@id='error-message-tooltip']");
 
-    By ClassCodeInMain=By.xpath("(//div[@class='sec-box']//div[@class='value'])[1]");
+    By toolTips = By.xpath("//div[@class='tooltipster-box']//div//span[2]");
+    By ClassCodeInMain=By.xpath("//div[@class='sec-top-boxes']//div[1]//div[2]//div");
 
 
     //Methods
+    public void ifTipsDisplay(){
+        removeToolTips(toolTips);
+        waitASec();
+    }
+    public void teacherCodeDisplay(){
+        isDisplayed(ClassCodeInMain);
+    }
     public void TechOrder(){
         mouseOver(menuEnterOrder);
         waitASec();
