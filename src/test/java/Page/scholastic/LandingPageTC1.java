@@ -54,7 +54,7 @@ public class LandingPageTC1 extends BasePage {
     By goToMyAcc = By.xpath("//li[@class='user-info toggle-menu']");
     By selectDropDown =By.xpath("//div[@class='toggle-content']//li//a");
     /////
-    By teachCodeInMain=By.xpath("By ClassCodeInMain=By.xpath(\"(//div[@class='sec-box']//div[@class='value'])[1]\");");
+    By ClassCodeInMain=By.xpath("//div[@class='sec-top-boxes']//div[1]//div[2]//div");
     By teacherCode = By.xpath("//div[@class='classcode']//span");
     By teachName =By.xpath("//div[@class='name-section']//div[2]//div//span");
     By teachSchool = By.xpath("//div[@class='school-section']//div[2]//div//span");
@@ -151,7 +151,7 @@ public class LandingPageTC1 extends BasePage {
         selectFromList(selectDropDown, name);
     }
     public void codeInMain(){
-        isDisplayed(teachCodeInMain);
+        isDisplayed(ClassCodeInMain);
     }
     public void checkCode(){
         isDisplayed(teacherCode);

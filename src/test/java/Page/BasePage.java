@@ -9,7 +9,6 @@ import org.openqa.selenium.support.ui.Wait;
 import org.testng.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 import java.time.Duration;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
