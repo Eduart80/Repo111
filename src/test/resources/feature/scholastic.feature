@@ -1,7 +1,7 @@
 
 Feature: Scholastic Create New Account
 
-  Scenario: User can create a new teacher account in taxable state using Zip Code
+  Scenario: TC1-User can create a new teacher account in taxable state using Zip Code
     When i 'create new account' account
     And i select radio button as a teacher
     And click Next

@@ -1,7 +1,7 @@
 
   Feature: login
 
-    Scenario:
+    Scenario:TC3-Teacher can add books in Recommendations List from Quick View
     When i signing to account
     Then i entered email 'khanfighu@yahoo.com' in field
     And i password '12345ASd' next
