@@ -1,4 +1,4 @@
-@smoke
+
 Feature: Scholastic Create New Account
 
   Scenario: TC1-User can create a new teacher account in taxable state using Zip Code

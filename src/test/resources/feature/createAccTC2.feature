@@ -5,7 +5,7 @@
       When i 'create new account' account
       And i select radio button as a teacher
       And click Next
-      When on the next form i select Mr.
+      When on the next form i select 'Mr.'
       And enter name 'Emanuel' in field
       And entered last name 'Ali' in field
       Then entered email 'emanuelAli@yahoo.com' in field

@@ -5,8 +5,6 @@ import WebDriver.Web;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import java.security.PublicKey;
-
 public class LandingPageTC1 extends BasePage {
 
     //Locators
@@ -36,7 +34,7 @@ public class LandingPageTC1 extends BasePage {
     By clickNext = By.xpath("//button[@name='dwfrm_searchschool_findnext']");
 
     By selectRole =By.xpath("//div[@class='selected-option input-select primaryrole required']");
-    By selectRole2 =By.xpath("//div[@class='custom-scrollbar']//li[2]");
+    By selectRoleDropDown =By.xpath("//div[@class='custom-scrollbar']//li[2]");
     By thirdForm =By.xpath("//div[@class='registration-steps step-3']");
     By selectGrade =By.xpath("//div[@class='selected-option input-select noscroll']");
     By selectGradeList=By.xpath("//div[@id='scrollbar-3']//li//span");
@@ -122,9 +120,9 @@ public class LandingPageTC1 extends BasePage {
         Web.getDriver().findElement(clickNext).click();
     }
     public void selectRole(){
-        switchForm(thirdForm);
+       // switchForm(thirdForm);
         mouseAction(selectRole);
-        Web.getDriver().findElement(selectRole2).click();
+        Web.getDriver().findElement(selectRoleDropDown).click();
     }
     public void selectGrade(String grade){
         clickThis(selectGrade);

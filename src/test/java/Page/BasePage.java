@@ -75,7 +75,7 @@ public class BasePage {
     }
     public void scrollPage(){
         JavascriptExecutor js = (JavascriptExecutor)Web.getDriver();
-        js.executeScript("scrollBy(0.700);");
+        js.executeScript("scrollBy(0.1200);");
     }
     public void scrollByWebElement(By locator){
         JavascriptExecutor js = (JavascriptExecutor)Web.getDriver();
@@ -84,6 +84,7 @@ public class BasePage {
     }
     public void selectFromList(By locator, String nameToSearch){
         List<WebElement> myList = Web.getDriver().findElements(locator);
+        System.out.println("B1 :"+myList.size());
         for(WebElement divIn : myList){
             if (divIn.getText().equalsIgnoreCase(nameToSearch)){
                 System.out.println("Select form list: "+divIn.getText());
@@ -135,7 +136,7 @@ public class BasePage {
             if (divIn.getText().equalsIgnoreCase(nameSearch)){
                 System.out.println("A2: -> "+divIn.getText());
                 divIn.click();
-            }
+            }/////  it does not have break, need to read the entire list
         }
     }
     public void listContainMultiLines(By locator, String nameSearch){
@@ -148,7 +149,6 @@ public class BasePage {
                 break;
             }
         }
-
     }//Contains
     public void removeToolTips(By locator){
         List<WebElement>aList=Web.getDriver().findElements(locator);

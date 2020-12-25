@@ -1,3 +1,4 @@
+
 Feature:
   Scenario: TC4-User can create a new teacher account in non-taxable state using Zip Code
     When i 'create new account' account
@@ -6,13 +7,13 @@ Feature:
     When on the next form i select 'Ms.'
     And enter name 'Eva' in field
     And entered last name 'Dora' in field
-    Then entered email 'evadora@yahoo.com' in field
+    Then entered email 'evadoraa@yahoo.com' in field
     And password '12345ASd' next
     When clicked terms
     And next button
-    When on next form i enter '99518' zip code, and click search
-    Then entered 'Adak Schoo' on search
-    And select from 'Adak School' list
+    When next form i enter '99518' zip code, and click search
+    Then entered 'Adak Schoo' in search
+    And i select 'Adak School' in list
     Then i verify the address is the same as '118 E INTL AIRPORT RD'
     Then i select role as Teacher (by Grade)
     And select '1st Grade' from list and enter 10 students

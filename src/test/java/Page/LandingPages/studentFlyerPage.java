@@ -1,4 +1,9 @@
 package Page.LandingPages;
 
-public class studentFlyerPage {
+import Page.BasePage;
+
+public class studentFlyerPage extends BasePage {
+
+
+
 }
