@@ -158,6 +158,12 @@ public class BasePage {
             }
         }
     }
+    public static void assertLinkNotPresent (By locator){
+        List<WebElement> verify = Web.getDriver().findElements(locator);
+        if (verify.isEmpty()) {
+            System.out.println("Object verification is: " + false);
+        }
+    }
 
 
 

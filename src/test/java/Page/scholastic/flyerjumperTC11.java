@@ -13,7 +13,7 @@ public class flyerjumperTC11 extends BasePage {
     By inputTypeQTY1 =By.xpath("(//td[@class=' item-qty']//input)[1]");
     By inputTypeQTY3 =By.xpath("(//td[@class=' item-qty']//input)[3]");
     By alertBox =By.xpath("//div[@class='info-modal-content']");//is displayed first
-
+    By alertBoxBody =By.xpath("//div[@id='info-student-flyer-order-fee' and @style='left: 546px; top: -74px; display: block;']");
 
     public void EntOed(String name){
         mouseOver(menuEnterOrder);
@@ -37,7 +37,8 @@ public class flyerjumperTC11 extends BasePage {
         enterField(inputTypeQTY3, name);
     }
     public void verif(){
-        isDisplayed(alertBox);
+        assertLinkNotPresent(alertBoxBody);
+
     }
 
 }
