@@ -18,9 +18,8 @@ public class SDcreateAccTC4 {
     @And("^i select '(.+)' from list$")
     public void grabSugg(String name){
         mp.waitASec();
-        mp.test(name);
     }
-    @When("^i verify the address is the same as '(.+)'$")
+    @When("^i confirm the address is '(.+)'$")
     public void findAddress(String name){
         mp.verifyAddress(name);
     }

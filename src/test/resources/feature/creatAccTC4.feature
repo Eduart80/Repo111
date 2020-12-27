@@ -13,9 +13,9 @@ Feature:
     When clicked terms
     And next button
     When next form i enter '99518' zip code, and click search
-    Then entered 'Adak Schoo'
+    Then entered 'Adak sch'
     And i select 'Adak School' from list
-    Then i verify the address is the same as '118 E INTL AIRPORT RD'
+    Then i confirm the address is '118 E INTL AIRPORT RD'
     Then i select role as Teacher (by Grade)
     And select '1st Grade' from list and enter 10 students
     And Reading Level: 'Guided Reading Level (GRL)'

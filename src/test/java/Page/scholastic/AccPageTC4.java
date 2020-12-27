@@ -1,46 +1,45 @@
 package Page.scholastic;
 
 import Page.BasePage;
+import WebDriver.Web;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 public class AccPageTC4 extends BasePage {
 
     By enterZip =By.id("dwfrm_myschool_schoolzip");
     By buttonSearch = By.id("button-search");
     By inputSearchClick =By.xpath("//input[@class='input-text ui-autocomplete-input valid']");
-    By inputSearchA = By.xpath("//input[@id='dwfrm_searchschool_schoolvalue']");
-    By aListOfSuggestion =By.xpath("//ul[@id='ui-id-2']//li//span");
-    By findState = By.xpath("//li[@class='custom-option select-option'and contains(@data-label,'Adak School')]");
-    By schoolList =By.xpath("//span[@class='ui-menu-item-wrapper']//span");
+    By inputSearchField = By.xpath("//input[@id='dwfrm_searchschool_schoolvalue']");
+
+        By schoolList =By.xpath("//span[@class='ui-menu-item-wrapper']//span");
     By confirmAddress = By.xpath("//div[@class='school-add']");
     By clickNext = By.xpath("//button[@name='dwfrm_searchschool_findnext']");
 
-    By inputSearchAA = By.xpath("//input[@id='dwfrm_searchschool_schoolvalue']");
-
+        By inputSearchAA = By.xpath("//input[@id='dwfrm_searchschool_schoolvalue']");
+        By prove=By.xpath("//li[@class='ui-menu-item']//span ");
+        By prove2=By.xpath("//li[@class='ui-menu-item']//span/span ");
 
 
     public void inserZip(String name){
         enterField(enterZip, name);
         clickThis(buttonSearch);
-        System.out.println("Step 1");
     }
     public void listOfCity(String name){
-        clickThis(inputSearchA);
+        clickThis(inputSearchAA);
         enterField(inputSearchClick,name);
-        selectFromList(schoolList, name);
-        System.out.println("Step 2");
-    }
-    public void suggList(String name){
+        clickThis(inputSearchAA);
+        WebElement ss=Web.getDriver().findElement(prove);
+        System.out.println("vvv"+ ss.getText());
+        WebElement ssa=Web.getDriver().findElement(prove);
+        System.out.println("vvv"+ ssa.getText());
+        System.out.println(ss.getText()+ssa.getText());
+        waitASec();
+        selectFromList(prove, name);
     }
     public void verifyAddress(String name){
-        System.out.println("Step 5");
-        listContainMultiLines(confirmAddress, name);
+        selectFromList(confirmAddress, name);
         clickThis(clickNext);
-    }
-    public void test(String name){
-        clickThis(inputSearchClick);
-        System.out.println("Step 3");
-        selectFromList(inputSearchAA,name);
     }
 
 

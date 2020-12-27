@@ -20,7 +20,9 @@ public class BasePage {
         Web.getDriver().findElement(locator).click();
     }
     public void enterField(By locator, String name){
-        Web.getDriver().findElement(locator).sendKeys(name);
+        WebElement inIt = Web.getDriver().findElement(locator);
+        inIt.clear();
+        inIt.sendKeys(name);
     }
     public void submitIt(By locator, String name){
        WebElement toSend = Web.getDriver().findElement(locator);
@@ -98,10 +100,10 @@ public class BasePage {
     }
     public void selectFromList(By locator, String nameToSearch){
         List<WebElement> myList = Web.getDriver().findElements(locator);
-        System.out.println("B1 :"+myList.size());
+       // System.out.println("B1 :"+myList.size());
         for(WebElement divIn : myList){
             if (divIn.getText().equalsIgnoreCase(nameToSearch)){
-                System.out.println("Select form list: "+divIn.getText());
+              //  System.out.println("Select form list: "+divIn.getText());
                 divIn.click();
                 break;
             }
@@ -131,20 +133,20 @@ public class BasePage {
     }
     public void selectFromMultiLines(By locator, String nameSearch){
         List<WebElement> myList = Web.getDriver().findElements(locator);
-        System.out.println("A1: "+myList.size());
+        //System.out.println("A1: "+myList.size());
         for(WebElement divIn : myList){
             if (divIn.getText().equalsIgnoreCase(nameSearch)){
-                System.out.println("A2: -> "+divIn.getText());
+                //System.out.println("A2: -> "+divIn.getText());
                 divIn.click();
             }/////  it does not have break, need to read the entire list
         }
-    }
+    }//print all
     public void listContainMultiLines(By locator, String nameSearch){
         List<WebElement> myList = Web.getDriver().findElements(locator);
-        System.out.println("A1: "+myList.size());
+        System.out.println("C1: "+myList.size());
         for(WebElement divIn : myList){
             if (divIn.getText().contains(nameSearch)){
-                System.out.println("A2: -> "+divIn.getText());
+                System.out.println("C2: -> "+divIn.getText());
                 divIn.click();
                 break;
             }
@@ -164,6 +166,24 @@ public class BasePage {
             System.out.println("Object verification is: " + false);
         }
     }
+    public void checkAndAssert(By locator, String nameSearch){
+        List<WebElement> myList = Web.getDriver().findElements(locator);
+       // System.out.println("E1: "+myList.size());
+        for(WebElement divIn : myList){
+            if (divIn.getText().equalsIgnoreCase(nameSearch)){
+                //System.out.println("E2: -> "+divIn.getText());
+                Assert.assertEquals(divIn.getText(), nameSearch, "The element name is not equal");
+            }/////  it does not have break, need to read the entire list
+        }
+    }//print all
+    public void AssertQuantity(By locator, int number){
+        List<WebElement> myList = Web.getDriver().findElements(locator);
+        Assert.assertEquals(myList.size(), number, "The element name is not equal");
+    }
+    public String AssertReturn(By locator){
+        return Web.getDriver().findElement(locator).getText();
+    }
+
 
 
 
