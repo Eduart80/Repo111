@@ -5,19 +5,24 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.When;
 
 public class SDcreateAccTC4 {
-    AccPageTC4 lp = new AccPageTC4();
+    AccPageTC4 mp = new AccPageTC4();
 
     @When("^next form i enter '(.+)' zip code, and click search$")
     public void selectZip(String name){
-        lp.inserZip(name);
+        mp.inserZip(name);
     }
-    @When("^entered '(.+)' in search$")
+    @When("^entered '(.+)'$")
     public void enterSchool(String name){
-        lp.listOfCity(name);
+        mp.listOfCity(name);
     }
-    @And("^i select '(.+)' in list$")
+    @And("^i select '(.+)' from list$")
     public void grabSugg(String name){
-        lp.SuggList(name);
+        mp.waitASec();
+        mp.test(name);
+    }
+    @When("^i verify the address is the same as '(.+)'$")
+    public void findAddress(String name){
+        mp.verifyAddress(name);
     }
 
 }

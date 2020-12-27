@@ -1,5 +1,5 @@
 Feature:
-@smoke
+
   Scenario: TC11-Verify YTO-By Flyer jumper
     When i signing to account
     Then i entered email 'khanfighu@yahoo.com' in field

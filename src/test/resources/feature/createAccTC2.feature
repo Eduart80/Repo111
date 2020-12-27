@@ -12,11 +12,11 @@
       And password '12345ASd' next
       When clicked terms
       And next button
-      And selsect
-      When next form i search for 'New York' and next
+      And select
+      When next form i search for 'New Y' and next
       And i enter for 'New York' in city
       Then entered 'Scholastic+Book+Club' on search
-      And select from 'Scholastic+Book+Clubs' list
+      And select 'Scholastic+Book+Clubs' from list
       Then i verify the address is the same as '568 Broadway # 2'
       Then i select role as Teacher (by Grade)
       And select '1st Grade' from list and enter 10 students
@@ -24,5 +24,5 @@
       When remove adds
       When click myAccount and select 'Profile'
       Then i check the teacher code
-      Then i check the Name 'Mr. Khan Fight' is correct
+      Then i check the Name 'Mr. Emanuel Ali' is correct
       Then i verify the address is 'SCHOLASTIC+BOOK+CLUBS 568 Broadway # 2 New York, NY 10012'

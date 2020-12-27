@@ -37,6 +37,20 @@ public class BasePage {
             e.printStackTrace();
         }
     }
+    public WebElement findElementFluentWait(final By locator) {
+        Wait fwait = new FluentWait(Web.getDriver())
+                .withTimeout(Duration.ofSeconds(30))
+                .pollingEvery(Duration.ofSeconds(1))
+                .ignoring(NoAlertPresentException.class)
+                .ignoring(NoSuchElementException.class)
+                .withMessage("Element not found i 30 sec");
+        WebElement element = (WebElement) fwait.until(new Function<WebDriver, WebElement>() {
+            public WebElement apply(WebDriver webDriver) {
+                return Web.getDriver().findElement(locator);
+            }
+        });
+        return element;
+    }
     public void selectDropDown(By locator, String name){
         WebElement dropDown = Web.getDriver().findElement(locator);
         Select dropD = new Select(dropDown);
@@ -93,27 +107,13 @@ public class BasePage {
             }
         }
     }//Equals
-    public WebElement findElementFluentWait(final By locator) {
-        Wait fwait = new FluentWait(Web.getDriver())
-                .withTimeout(Duration.ofSeconds(30))
-                .pollingEvery(Duration.ofSeconds(1))
-                .ignoring(NoAlertPresentException.class)
-                .ignoring(NoSuchElementException.class)
-                .withMessage("Element not found i 30 sec");
-        WebElement element = (WebElement) fwait.until(new Function<WebDriver, WebElement>() {
-            public WebElement apply(WebDriver webDriver) {
-                return Web.getDriver().findElement(locator);
-            }
-        });
-    return element;
-    }
     public void isDisplayed(By locator) {
         WebElement codeIsHere = Web.getDriver().findElement(locator);
         boolean code = codeIsHere.isDisplayed();
         if(code){
-            System.out.println("Teacher verification is: " + codeIsHere.getText());
+            System.out.println("Object verification is: " + codeIsHere.getText());
         }else {
-            System.out.println("Teacher verification is: " + false);
+            System.out.println("Object verification is: " + false);
         }
     }
     public void isEnable(By locator){
@@ -158,12 +158,13 @@ public class BasePage {
             }
         }
     }
-    public static void assertLinkNotPresent (By locator){
+    public void assertLinkNotPresent (By locator){
         List<WebElement> verify = Web.getDriver().findElements(locator);
         if (verify.isEmpty()) {
             System.out.println("Object verification is: " + false);
         }
     }
+
 
 
 

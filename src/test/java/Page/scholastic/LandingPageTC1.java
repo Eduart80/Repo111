@@ -30,6 +30,7 @@ public class LandingPageTC1 extends BasePage {
     By inputSearchClick =By.xpath("//input[@id='dwfrm_searchschool_schoolvalue']");
     By listClub = By.id("ui-id-4390");
     By selectOnList=By.xpath("//ul[@id='ui-id-2']//li");
+    By getSelectOnList2=By.xpath("//li[@class='ui-menu-item']//span");
     By confirmAddress = By.xpath("//div[@class='school-add']");
     By clickNext = By.xpath("//button[@name='dwfrm_searchschool_findnext']");
 
