@@ -1,3 +1,4 @@
+@regression
 Feature:
 
   Scenario: TC11-Verify YTO-By Flyer jumper

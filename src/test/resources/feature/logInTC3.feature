@@ -1,4 +1,4 @@
-
+@regression
   Feature: login
 
     Scenario:TC3-Teacher can add books in Recommendations List from Quick View

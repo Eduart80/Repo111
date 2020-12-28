@@ -1,3 +1,4 @@
+@regression
 Feature:
 
   Scenario: TC6-Verify teacher gets error for invalid item number in SFO (Student Flyer Order)

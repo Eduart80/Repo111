@@ -1,3 +1,4 @@
+@regression
 Feature:
 
   Scenario: TC5-Verify teacher can add only 3 credit cards under My Credit Cards in My Accounts

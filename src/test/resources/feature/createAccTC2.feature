@@ -1,4 +1,4 @@
-
+@regression
   Feature:
 
     Scenario:TC2-User can create a new teacher account in taxable state using School Search

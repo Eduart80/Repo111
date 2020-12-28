@@ -1,4 +1,6 @@
+@regression
 Feature:
+
   Scenario: TC7-Verify teacher can add multiple books for a student in SFO
     When i signing to account
     Then i entered email 'khanfighu@yahoo.com' in field

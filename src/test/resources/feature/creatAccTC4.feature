@@ -1,4 +1,4 @@
-
+@regression
 Feature:
 
   Scenario: TC4-User can create a new teacher account in non-taxable state using Zip Code
