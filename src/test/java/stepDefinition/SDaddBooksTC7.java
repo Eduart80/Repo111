@@ -22,29 +22,38 @@ public class SDaddBooksTC7 {
     public void verifName(String name){
         pp.verifffy(name);
     }
-    @When("^i verify entry item '(.+)' is the same$")
+    @When("^i verify entry items '(.+)' are the same$")
     public void verifItem(String name){
         pp.verifffy2(name);
-    }
-    @When("^i verify entry QTY '(.+)' is the same$")
-    public void verifQTY(String name){
-        pp.verifffy3(name);
     }
     @When("^click Review card button$")
     public void ClickButt(){
         pp.inCard();
     }
-    @When("^i verify quantity '(.+)'$")
+    @When("^i verify under Harry quantity is '(.+)'$")
     public void verifQTY(int name){
         pp.AssertQuant(name);
+    }
+    @When("^i calculate the books sum$")
+    public void calculate(){
+        pp.ccccc();
+    }
+    @When("^verification the table student Name is same as entered$")
+    public void verificationName(){
+        pp.checkVerific();
+    }
+
+    @When("^I verify the total matches the number of books$")
+    public void veriBooks(){
+        pp.verifBooks();
     }
     @When("^i verify total amount pay is the same in SFO$")
     public void verifPay(){
         pp.inPay();
     }
-    @When("^i verify totalbooks is '(.+)'$")
-    public void verifPay(String name){
-        pp.verifBooks(name);
+    @When("^i verify total quantity of student entered is the same in SFO$")
+    public void checkStu(){
+        pp.checkStudents();
     }
 
 

@@ -1,9 +1,13 @@
 package Page.scholastic;
 
 import Page.BasePage;
+import WebDriver.Web;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
+import java.util.Collections;
+import java.util.List;
 import java.util.stream.Stream;
 
 public class addBookTC7 extends BasePage {
@@ -18,8 +22,17 @@ public class addBookTC7 extends BasePage {
     By totalAmount =By.xpath("//li[@class='std-total-price stdPriceTotal']");
     By tableOfContent =By.xpath("//table[@class='cell-border dataTable item-table']//tr");
     By SFOTable=By.xpath("//div[@class='or-inner']//li[2]//span//span[2]");
+    By SFOTableStudents=By.xpath("(//div[@class='or-inner']//li[2]//span//span[1])[1]");
+    By tableOfStuOrder =By.xpath("//div[@class='cart-sfo-content']//div[@class='each-review-order']");
 
+    By tableName = By.xpath("//div[@class='each-review-order']//i");
+    By booksInBasket =By.xpath("//div[@class='each-review-order']//tr//td[@class='item-qty']//input");
 
+    //////
+    public static String stuNameR = null;
+    public static String stuBooks = null;
+    public static int numberOfBooks = 0;
+    //////
     public void enterBooks(String number){
         clickThis(QTYinput);
         waitAMin();
@@ -27,12 +40,10 @@ public class addBookTC7 extends BasePage {
     }
     public void verifffy(String name){
         checkAndAssert(studentNameInOrder, name);
+        stuNameR = name;
     }
     public void verifffy2(String name){
         checkAndAssert(studentItemInOrder, name);
-    }
-    public void verifffy3(String name){
-        checkAndAssert(studentQTYinOrder, name);
     }
     public void inCard(){
         clickThis(buttonCard);
@@ -40,13 +51,31 @@ public class addBookTC7 extends BasePage {
     public void AssertQuant(int number){
        AssertQuantity(tableOfContent, number);
     }
-    public void verifBooks(String number){
-      assertEqual(totalQTY, number);////
-    }
     public void inPay(){
         String a1= AssertReturn(SFOTable);
         String a2= AssertReturn(totalAmount);
         Assert.assertEquals(a1,a2,"Sum Books price is not equal");
+        System.out.println("You pay: "+a1);
+    }
+    public void checkVerific(){
+        assertEqListOfString(tableName, stuNameR);
+        System.out.println("Student name verification "+stuNameR);
+    }
+    public void ccccc() {
+      numberOfBooks= countHowMany(booksInBasket);
+    }
+    public void verifBooks(){
+        String numbOfBooksString = Integer.toString(numberOfBooks);
+        WebElement numb = Web.getDriver().findElement(totalQTY);
+        String inConv = numb.getText();//.toString();
+      Assert.assertEquals(numbOfBooksString, inConv, "Books not matching" );
+    }
+    public void checkStudents(){
+        WebElement numb2 = Web.getDriver().findElement(totalQTY);
+        String atConv = numb2.getText();
+        WebElement name1 = Web.getDriver().findElement(totalQTY);
+        String name3 = name1.getText();
+        Assert.assertEquals(atConv,name3, "Student table not matching");
     }
 
 

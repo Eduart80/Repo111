@@ -131,6 +131,15 @@ public class BasePage {
         WebElement codeIsHere = Web.getDriver().findElement(locator);
         Assert.assertEquals(codeIsHere.getText(), toMatch, "The element name is not matching.");
     }
+    public void assertEqListOfString(By locator, String toMatch){
+        WebElement codeIsHere = Web.getDriver().findElement(locator);
+        Assert.assertEquals(codeIsHere.getText(), toMatch, "The element name is not matching.");
+    }
+    public void assertEqual2Locators(By locator, By locatorToMatch){
+        WebElement codeOne = Web.getDriver().findElement(locator);
+        WebElement codeTwo = Web.getDriver().findElement(locatorToMatch);
+        Assert.assertEquals(codeOne.getText(), codeTwo.getText(), "Books quantity does not match.");
+    }
     public void selectFromMultiLines(By locator, String nameSearch){
         List<WebElement> myList = Web.getDriver().findElements(locator);
         //System.out.println("A1: "+myList.size());
@@ -183,7 +192,23 @@ public class BasePage {
     public String AssertReturn(By locator){
         return Web.getDriver().findElement(locator).getText();
     }
-
+    public int countHowMany(By locator){
+        ////  getAttribute by "value"
+        List<WebElement> doli = Web.getDriver().findElements(locator);
+        int a = 0;
+        int counting = 0;
+        for (WebElement sdi : doli){
+            if(counting <= doli.size()){
+                String  textIn = sdi.getAttribute("value") + a;
+                int num = Integer.parseInt(textIn);
+                int devideIt = num / 10; // check this step too
+                a = devideIt + a;
+                counting++;
+            }
+        }
+        System.out.println("Total books in basket: "+a);
+        return a;
+    }
 
 
 
