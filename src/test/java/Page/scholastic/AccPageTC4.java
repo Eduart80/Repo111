@@ -32,8 +32,8 @@ public class AccPageTC4 extends BasePage {
         WebElement ss=Web.getDriver().findElement(prove);
         System.out.println("vvv"+ ss.getText());
         WebElement ssa=Web.getDriver().findElement(prove);
-        System.out.println("vvv"+ ssa.getText());
-        System.out.println(ss.getText()+ssa.getText());
+        //System.out.println("vvv"+ ssa.getText());
+        System.out.println(ss.getText()+" and "+ssa.getText());
         waitASec();
         selectFromList(prove, name);
     }

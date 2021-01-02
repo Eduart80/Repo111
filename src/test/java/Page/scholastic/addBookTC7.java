@@ -19,7 +19,9 @@ public class addBookTC7 extends BasePage {
     By studentQTYinOrder =By.xpath("//tr[@role='row']//td[@class=' item-qty']//input[1]");
 
     By totalQTY =By.xpath("(//li[@class='std-total-qty']//span)[1]");
-    By totalAmount =By.xpath("//li[@class='std-total-price stdPriceTotal']");
+    By beckUpTotalQTY=By.xpath("//div[@class='total-review-order']//li[4]//span");
+    By individualTotalAmount =By.xpath("//li[@class='std-total-price stdPriceTotal']");
+    By BigTotalToPay =By.xpath("//div[@class='total-review-order']//li[3]");
     By tableOfContent =By.xpath("//table[@class='cell-border dataTable item-table']//tr");
     By SFOTable=By.xpath("//div[@class='or-inner']//li[2]//span//span[2]");
     By SFOTableStudents=By.xpath("(//div[@class='or-inner']//li[2]//span//span[1])[1]");
@@ -53,8 +55,8 @@ public class addBookTC7 extends BasePage {
     }
     public void inPay(){
         String a1= AssertReturn(SFOTable);
-        String a2= AssertReturn(totalAmount);
-        Assert.assertEquals(a1,a2,"Sum Books price is not equal");
+        String a2= AssertReturn(individualTotalAmount);
+        Assert.assertEquals(a1,a2,"Some Books price is not equal");
         System.out.println("You pay: "+a1);
     }
     public void checkVerific(){
@@ -62,18 +64,18 @@ public class addBookTC7 extends BasePage {
         System.out.println("Student name verification "+stuNameR);
     }
     public void ccccc() {
-      numberOfBooks= countHowMany(booksInBasket);
+      numberOfBooks = countHowMany(booksInBasket);
     }
     public void verifBooks(){
         String numbOfBooksString = Integer.toString(numberOfBooks);
-        WebElement numb = Web.getDriver().findElement(totalQTY);
+        WebElement numb = Web.getDriver().findElement(beckUpTotalQTY);
         String inConv = numb.getText();//.toString();
-      Assert.assertEquals(numbOfBooksString, inConv, "Books not matching" );
+        Assert.assertEquals(numbOfBooksString, inConv, "Books not matching" );
     }
     public void checkStudents(){
-        WebElement numb2 = Web.getDriver().findElement(totalQTY);
+        WebElement numb2 = Web.getDriver().findElement(tableOfStuOrder);
         String atConv = numb2.getText();
-        WebElement name1 = Web.getDriver().findElement(totalQTY);
+        WebElement name1 = Web.getDriver().findElement(SFOTableStudents);
         String name3 = name1.getText();
         Assert.assertEquals(atConv,name3, "Student table not matching");
     }

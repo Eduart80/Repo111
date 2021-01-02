@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.Wait;
 import org.testng.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 import java.time.Duration;
-import java.util.List;
+import java.util.*;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
@@ -113,9 +113,9 @@ public class BasePage {
         WebElement codeIsHere = Web.getDriver().findElement(locator);
         boolean code = codeIsHere.isDisplayed();
         if(code){
-            System.out.println("Object verification is: " + codeIsHere.getText());
+            System.out.println("Teacher verification code: " + codeIsHere.getText());
         }else {
-            System.out.println("Object verification is: " + false);
+            System.out.println("Teacher verification code: " + false);
         }
     }
     public void isEnable(By locator){
@@ -177,10 +177,10 @@ public class BasePage {
     }
     public void checkAndAssert(By locator, String nameSearch){
         List<WebElement> myList = Web.getDriver().findElements(locator);
-       // System.out.println("E1: "+myList.size());
+        //System.out.println("E1: "+myList.size());
         for(WebElement divIn : myList){
             if (divIn.getText().equalsIgnoreCase(nameSearch)){
-                //System.out.println("E2: -> "+divIn.getText());
+                System.out.println("E2: -> "+divIn.getText());
                 Assert.assertEquals(divIn.getText(), nameSearch, "The element name is not equal");
             }/////  it does not have break, need to read the entire list
         }
@@ -209,6 +209,22 @@ public class BasePage {
         System.out.println("Total books in basket: "+a);
         return a;
     }
+    public Set<String> assertLists(By anotherName){
+        Set<String>ar=new HashSet<>();
+        List<WebElement> doli = Web.getDriver().findElements(anotherName);
+        int counting = 0;
+        for (WebElement sdi : doli){
+            if(counting <= doli.size()){
+                ar.add(sdi.getText());
+                counting++;
+            }
+        }
+        System.out.println("Total students: "+ar);
+        return ar;
+
+    }
+//    public String deleteItemList(By locator, String bookNumb){}
+
 
 
 
