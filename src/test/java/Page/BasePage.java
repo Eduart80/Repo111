@@ -91,7 +91,7 @@ public class BasePage {
     }
     public void scrollPage(){
         JavascriptExecutor js = (JavascriptExecutor)Web.getDriver();
-        js.executeScript("scrollBy(0.1200);");
+        js.executeScript("scrollBy(0,700);");
     }
     public void scrollByWebElement(By locator){
         JavascriptExecutor js = (JavascriptExecutor)Web.getDriver();
@@ -223,7 +223,16 @@ public class BasePage {
         return ar;
 
     }
-//    public String deleteItemList(By locator, String bookNumb){}
+    public void deleteTableList(By locator, By locator2, By locator3){
+         List<WebElement> table=Web.getDriver().findElements(locator);
+         for(WebElement dil : table){
+                if(dil.isDisplayed()){
+                    clickThis(locator2);
+                    clickThis(locator3);
+                }
+        }
+    }
+
 
 
 
