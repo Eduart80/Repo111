@@ -25,10 +25,15 @@ public class multStudTC8 extends BasePage {
     By tableName = By.xpath("//div[@class='each-review-order']//h2//i");
     By booksInBasket =By.xpath("//div[@class='each-review-order']//tr//td[@class='item-qty']//input");
 
+    By TeachTableQTY =By.xpath("(//div[@class='sec-order-table']//div//td)[5]");
+    By TeachPrice =By.xpath("//div[@class='sec-order-table']//div//td[@class='price']//span");
+    By totalOrder=By.xpath("//div[@class='total-review-order cart-total']//*[@id='cartTotalQty']");
+
     //////
     public static Set<String> ListNames = new HashSet<>();
     public static Set<String> StudentsNames = new HashSet<>();
     private static int itemsNumber = 0;
+
     //////
 
     public void namesIN(String name){
@@ -50,7 +55,7 @@ public class multStudTC8 extends BasePage {
     public void toPay(){
         String a1= AssertReturn(SFOTableTotal);
         String a2= AssertReturn(BigTotalToPay);
-        Assert.assertEquals(a1,a2,"Some Books price is not equal");
+        Assert.assertEquals(a1,a2,"Some Books price are not equal");
         System.out.println("You pay: "+a1);
     }
     public void verifBooks(){

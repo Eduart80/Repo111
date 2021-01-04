@@ -1,6 +1,7 @@
 package Page;
 
 import WebDriver.Web;
+import cucumber.api.java.eo.Do;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.FluentWait;
@@ -192,9 +193,9 @@ public class BasePage {
     public String AssertReturn(By locator){
         return Web.getDriver().findElement(locator).getText();
     }
-    public int countHowMany(By locator){
+    public int countHowMany(By locator1){
         ////  getAttribute by "value"
-        List<WebElement> doli = Web.getDriver().findElements(locator);
+        List<WebElement> doli = Web.getDriver().findElements(locator1);
         int a = 0;
         int counting = 0;
         for (WebElement sdi : doli){
@@ -206,7 +207,24 @@ public class BasePage {
                 counting++;
             }
         }
-        System.out.println("Total books in basket: "+a);
+        //System.out.println("Total books in basket: "+a);
+        return a;
+    }
+    public double countHowMuch(By locator1){
+        ////  getAttribute by "value"
+        List<WebElement> doli = Web.getDriver().findElements(locator1);
+        double a = 0;
+        int counting = 0;
+        for (WebElement sdi : doli){
+            if(counting <= doli.size()){
+                String  textIn = sdi.getText();
+                String number2 = textIn.replace('$', ' ');
+                double num= Double.parseDouble(number2.trim());
+                a = num + a;
+                counting++;
+            }
+        }
+        //System.out.println("Total books in basket: "+a);
         return a;
     }
     public Set<String> assertLists(By anotherName){
@@ -232,9 +250,11 @@ public class BasePage {
                 }
         }
     }
-
-
-
+    public double splitStrings(String number){
+        String number2 = number.replace('$', ' ');
+        double a= Double.parseDouble(number2.trim());
+        return a;
+    }
 
 
 

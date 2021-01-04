@@ -8,14 +8,13 @@ import java.util.stream.Stream;
 public class SDmakeOrderTC15 {
     makeOrderTC15 pp = new makeOrderTC15();
 
-    @When("^i scroll down '1000' pixels$")
-    public void scPIX(){
-        pp.scrollPix();
-    }
-
     @When("^click continue to checkout$")
     public void hi(){
         pp.clickGo();
+    }
+    @When("^i scroll down '1000' pixels$")
+    public void scPIX(){
+        pp.scrollPix();
     }
     @When("^i select payment method credit card$")
     public void selCard(){

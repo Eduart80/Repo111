@@ -26,6 +26,7 @@ public class addBookTC7 extends BasePage {
     By SFOTable=By.xpath("//div[@class='or-inner']//li[2]//span//span[2]");
     By SFOTableStudents=By.xpath("(//div[@class='or-inner']//li[2]//span//span[1])[1]");
     By tableOfStuOrder =By.xpath("//div[@class='cart-sfo-content']//div[@class='each-review-order']");
+    By TeachTableQTY =By.xpath("(//div[@class='sec-order-table']//div//td)[5]");
 
     By tableName = By.xpath("//div[@class='each-review-order']//i");
     By booksInBasket =By.xpath("//div[@class='each-review-order']//tr//td[@class='item-qty']//input");
