@@ -1,4 +1,4 @@
-package Page.LandingPages;
+package Page.Aside;
 
 import org.openqa.selenium.By;
 

@@ -16,7 +16,7 @@ public class SDinsideAccountTC3 {
     public void emailInAccount(String email){
         lp.enterEmail(email);
     }
-    @And("^i password '(.+)' next$")
+    @And("^i enter password '(.+)' and next$")
     public void passInAccount(String number){
         lp.enterPass(number);
     }

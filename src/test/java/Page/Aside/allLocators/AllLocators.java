@@ -1,4 +1,4 @@
-package Page.LandingPages.allLocators;
+package Page.Aside.allLocators;
 
 import org.openqa.selenium.By;
 

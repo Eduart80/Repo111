@@ -8,7 +8,7 @@ Feature:
     When on the next form i select 'Ms.'
     And enter name 'Eva' in field
     And entered last name 'Dora' in field
-    Then entered email 'evadorab@yahoo.com' in field
+    Then entered email 'evadorac@yahoo.com' in field
     And password '12345ASd' next
     When clicked terms
     And next button
@@ -23,5 +23,5 @@ Feature:
     And i see if teacher code is here
     When click myAccount and select 'Profile'
     Then i check the teacher code
-    Then i check the Name 'Mr. Eva Dora' is correct
+    Then i check the Name 'Ms. Eva Dora' is correct
     Then i verify the address is 'SCHOLASTIC+BOOK+CLUBS 568 Broadway # 2 New York, NY 10012'

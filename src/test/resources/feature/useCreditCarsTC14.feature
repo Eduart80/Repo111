@@ -1,8 +1,10 @@
+
 Feature:
+
   Scenario: TC14 make order using existing credit card
     When i signing to account
     Then i entered email 'evadorab@yahoo.com' in field
-    And i password '12345ASd' next
+    And i enter password '12345ASd' and next
     And clicked enter
     Then  check toolTips
     When i see for teacher code is present

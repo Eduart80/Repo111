@@ -1,9 +1,10 @@
+
 Feature:
 
   Scenario:TC13 Verify non-zero tax is present for SFO-YTO orders in the checkout for teacher with tax state school
     When i signing to account
     Then i entered email 'khanfighu@yahoo.com' in field
-    And i password '12345ASd' next
+    And i enter password '12345ASd' and next
     And clicked enter
     Then  check toolTips
     When i see for teacher code is present

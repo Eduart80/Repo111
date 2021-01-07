@@ -1,4 +1,4 @@
-package Page.LandingPages;
+package Page.Aside;
 
 import Page.BasePage;
 import WebDriver.Web;

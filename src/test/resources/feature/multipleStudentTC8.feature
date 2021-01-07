@@ -4,7 +4,7 @@
     Scenario: TC8-Verify teacher can add multiple books for multiple students in SFO
       When i signing to account
       Then i entered email 'khanfighu@yahoo.com' in field
-      And i password '12345ASd' next
+      And i enter password '12345ASd' and next
       And clicked enter
       Then  check toolTips
       When i see for teacher code is present
